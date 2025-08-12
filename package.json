@@ -1,0 +1,16 @@
+{
+  "name": "probando-render",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/express": "5.0.3",
+    "express": "5.1.0"
+  }
+}
