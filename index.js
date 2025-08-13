@@ -4,6 +4,8 @@ const app = express()
 const port = process.env.PORT || 3000
 
 const allowedOrigins = [
+    'https://juanfpaz.github.io',
+    'https://juanfpaz.github.io/form-contacto/',
     'https://jpaz.ar',
     'http://localhost:5173'
 ];
