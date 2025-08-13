@@ -4,13 +4,13 @@ const app = express()
 const port = process.env.PORT || 3000
 
 const allowedOrigins = [
+    'https://jpaz.ar',
     'http://localhost:5173'
 ];
 
 const corsOptions = {
     origin: function (origin, callback) {
         if (!origin) return callback(null, true);
-        
         if (allowedOrigins.includes(origin)) {
             callback(null, true);
         } else {
@@ -18,7 +18,6 @@ const corsOptions = {
         }
     },
     credentials: true,
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization']
 };
 
@@ -27,11 +26,10 @@ app.use(cors(corsOptions));
 
 app.get('/', (req, res) => {
     try {
-        console.log('Hola fonky')
-        res.json({mensaje:'Hola Fonky! n.n'})
+        console.log(`Recibiendo request desde ${req.headers.origin}`);
+        res.json({mensaje:'Hola fonky :D'})
     } catch (error) {
         console.log(error);
-        
         res.status(403).json({error:'Solicitud no permitida'})
     }
 })
